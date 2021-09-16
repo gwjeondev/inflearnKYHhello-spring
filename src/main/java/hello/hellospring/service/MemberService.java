@@ -2,6 +2,7 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 /* @Service anotation이 있을 경우 Service 판단하고
 스프링 컨테이너에 스프링 빈으로 등록한다. @Component를 포함 */
 //@Service
+@Transactional // jpa를 사용하려면 트랜잭션 annotation이 있어야함.
 public class MemberService {
     private MemberRepository memberRepository;
     //@Autowired private MemberRepository memberRepository; 필드 의존성 주입 방식
