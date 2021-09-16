@@ -42,7 +42,7 @@ public class MemberService {
      */
     private void vaildateDuplicateMember(Member member) {
         /* findByName Method로 부터 return 받은 optional 객체를 ifPresent를 통해 값이 있으면(null이 아니면)
-        이미 존재하는 회원임으로 예외를 던진다.*/
+        이미 존재하는 회원임으로 예외를 던진다.....*/
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원 입니다.");
