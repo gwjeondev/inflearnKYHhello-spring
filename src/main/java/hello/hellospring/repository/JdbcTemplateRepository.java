@@ -16,6 +16,7 @@ public class JdbcTemplateRepository implements MemberRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
+    // JdbcTemplate은 spring이 인젝션 해주지 않음으로 dataSource를 JdbcTemplate 인스턴스의 생성자로 주입함.
     public JdbcTemplateRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
